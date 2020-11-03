@@ -6,7 +6,6 @@ html {
     background-image: url(/assets/img/bg.jpg);
     background-size: cover;
     background-position: bottom;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #index {
@@ -19,6 +18,9 @@ html {
     border-style: solid;
     border-color: gray;
     border-width: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    line-height: 150%;
 }
 
 #companyName {
