@@ -17,6 +17,8 @@ main {
     font-weight: bold;
     border-radius: 10px;
     border-style: solid;
+    border-color: gray;
+    border-width: 1px;
 }
 
 #companyName {
@@ -31,10 +33,11 @@ main {
 #about {
     margin-top: 20px;
     font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
 }
 
 #login {
     margin-top: 20px;
     font-weight: normal;
-    text-decoration: none;
 }
