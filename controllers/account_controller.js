@@ -10,7 +10,13 @@ router.get("/", function(req, res) {
 });
 
 router.get("/home", function(req, res) {
-    res.render("home");
+    account.all(function(data) {
+        var hbsObject = {
+            accounts: data
+        };
+        console.log(hbsObject);
+        res.render("home", hbsObject);
+    });
 });
 
 // leave this route at the end, redirects 404 error to index

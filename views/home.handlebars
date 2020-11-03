@@ -2,9 +2,11 @@
         <div class="column is-one-quarter">
             <div class="column is-full cardStyle">
                 Accounts go here, poplate detailed data to right when selected
-                <br> Amex Green | $8.9k | 21.99%
-                <br> Car Loan | $16.7k | 1.99% | 4yr
-                <br> Mortgage | $345k | 3.625% | 30yr
+  {{#each accounts}}
+    <li>
+    {{account_name}} | {{interest}} | {{term_months}}
+    </li>
+  {{/each}}
                 <br> Add new account
                 <br> Logout
             </div>
@@ -18,3 +20,5 @@
             </div>
         </div>
     </div>
+
+    
