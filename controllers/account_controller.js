@@ -11,6 +11,12 @@ router.get("/", function(req, res) {
 
 });
 
+router.get("/home", function(req, res) {
+
+    res.render("home");
+
+});
+
 
 // Borrowed from 13-17 cats app, todo: adapt this
 
