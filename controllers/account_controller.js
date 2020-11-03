@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (account.js) to use its database functions.
-var account = require("../models/accoubnt.js");
+var account = require("../models/account.js");
 
 router.get("/", function(req, res) {
     cat.all(function(data) {
