@@ -6,11 +6,17 @@ var router = express.Router();
 var account = require("../models/account.js");
 
 router.get("/", function(req, res) {
-
     res.render("index");
-
 });
 
+router.get("/home", function(req, res) {
+    res.render("home");
+});
+
+// leave this route at the end, redirects 404 error to index
+router.get("*", function(req, res) {
+    res.render("index");
+});
 
 // Borrowed from 13-17 cats app, todo: adapt this
 
