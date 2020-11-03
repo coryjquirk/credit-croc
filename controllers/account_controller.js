@@ -6,9 +6,9 @@ var router = express.Router();
 var account = require("../models/account.js");
 
 router.get("/", function(req, res) {
-    cat.all(function(data) {
-        res.render("index");
-    });
+
+    res.render("index");
+
 });
 
 
