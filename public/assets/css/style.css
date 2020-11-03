@@ -6,12 +6,11 @@ html {
     background-image: url(/assets/img/bg.jpg);
     background-size: cover;
     background-position: bottom;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-main {
-    width: 350px;
-    padding: 30px;
+#index {
+    width: 400px;
+    padding: 15px;
     background-color: white;
     text-align: center;
     font-weight: bold;
@@ -19,6 +18,9 @@ main {
     border-style: solid;
     border-color: gray;
     border-width: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 125%;
+    color: black;
 }
 
 #companyName {
