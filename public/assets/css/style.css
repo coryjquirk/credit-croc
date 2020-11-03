@@ -6,11 +6,12 @@ html {
     background-image: url(/assets/img/bg.jpg);
     background-size: cover;
     background-position: bottom;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #index {
     width: 400px;
-    padding: 15px;
+    padding: 30px;
     background-color: white;
     text-align: center;
     font-weight: bold;
@@ -18,9 +19,6 @@ html {
     border-style: solid;
     border-color: gray;
     border-width: 1px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 125%;
-    color: black;
 }
 
 #companyName {
@@ -42,6 +40,7 @@ html {
 #login {
     margin-top: 20px;
     font-weight: normal;
+    text-decoration: none;
 }
 
 .cardStyle {
@@ -52,4 +51,8 @@ html {
     border-style: solid;
     border-color: gray;
     border-width: 1px;
+}
+
+#home {
+    width: 100vw;
 }
