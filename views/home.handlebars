@@ -10,7 +10,15 @@
         {{#each accounts}}
         <div class="column is-full cardStyle">
             {{account_name}} | {{interest}}% | ${{balance}}
-            | Active? {{#if active}}YES <button class="deactivate" data-id="{{id}}" data-active="{{active}}">Click to deactivate</button>{{/if}}{{#unless active}}NO <button class="activate" data-id="{{id}}" data-active="{{active}}">Click to activate</button>{{/unless}}
+            {{#if term_months}} | {{term_months}}
+            {{/if}}
+            <br>
+            {{#if active}}
+                <a class="deactivate" data-id="{{id}}" data-active="{{active}}">Hide</a>
+            {{/if}}
+            {{#unless active}}
+            <a class="activate" data-id="{{id}}" data-active="{{active}}">Show</a>
+            {{/unless}} | <a href="#">Edit</a> | <a href="#">Delete</a>
         </div>
         {{/each}}
     </div>
