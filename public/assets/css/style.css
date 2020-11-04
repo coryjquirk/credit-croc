@@ -58,3 +58,7 @@ html {
 #home {
     width: 100vw;
 }
+
+.center {
+    text-align: center;
+}
