@@ -1,4 +1,13 @@
 $(function() {
+
+    $(document).ready(function() {
+        // This file just does a GET request to figure out which user is logged in
+        // and updates the HTML on the page
+        console.log("Checking logged in user")
+        $.get("/api/user_data").then(function(data) {
+            $(".member-name").text(data.email);
+        });
+    });
     $(".activate").on("click", function(event) {
         event.preventDefault();
         console.log("activate CLICKED");

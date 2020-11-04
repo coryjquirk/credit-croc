@@ -12,6 +12,8 @@
 
 
 
+
+
 {{!-- login modal --}}
 <div class="modal" id="loginModal">
   <div class="modal-background"></div>
@@ -20,14 +22,16 @@
       <p class="modal-card-title">Login</p>
       <button class="delete close" aria-label="close"></button>
     </header>
-    <section class="modal-card-body">
-      E-mail <input class="input" type="text">
-      Password <input class="input" type="text">
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success loginModalButton">Login</button>
-      <button class="button close">Cancel</button>
-    </footer>
+    <form class="login">
+        <section class="modal-card-body">
+          E-mail <input type="email" id="email-input" class="input" type="text">
+          Password <input type="password" id="password-input" class="input" type="text">
+        </section>
+        <footer class="modal-card-foot">
+          <button type="submit" class="button is-success">Login</button>
+          <button class="button close">Cancel</button>
+        </footer>
+    </form>
   </div>
 </div>
 
@@ -39,15 +43,21 @@
       <p class="modal-card-title">Register</p>
       <button class="delete close" aria-label="close"></button>
     </header>
-    <section class="modal-card-body">
-      E-mail <input class="input" type="text">
-      Password <input class="input" type="text">
-      Verify password <input class="input" type="text">
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success registerModalButton">Register</button>
-      <button class="button close">Cancel</button>
-    </footer>
+    <form class="signup">
+        <section class="modal-card-body">
+          E-mail <input type="email" id="email-input" class="input" type="text">
+          Password <input type="password" id="password-input" class="input" type="text">
+          Verify password <input class="input" type="text">
+        </section>
+        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span> <span class="msg"></span>
+        </div>
+        <footer class="modal-card-foot">
+          <button type="submit" class="button is-success form.signup">Register</button>
+          <button class="button close">Cancel</button>
+        </footer>
+    </form>
   </div>
 </div>
 
