@@ -1,0 +1,65 @@
+<div id="indexContainer">
+    <div class="columns" id="index">
+        <div class="column">
+            <img src="/assets/img/croc.png"><br>
+            <sectiion id="companyName">CREDIT CROC</sectiion>
+            <section id="companySlogan">Take a bite out of debt!</section>
+            <section id="about">Managing your debt is lame. Credit Croc is cool. Credit Croc keeps track of your debt so you don't have to!</section>
+            <section id="login" a class="loginButton">Login</a> | <a class="registerButton" id="register">Register</a></section>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{{!-- login modal --}}
+<div class="modal" id="loginModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <form class="login">
+        <section class="modal-card-body">
+          E-mail <input type="email" id="email-input" class="input" type="text">
+          Password <input type="password" id="password-input" class="input" type="text">
+        </section>
+        <footer class="modal-card-foot">
+          <button type="submit" class="button is-success">Login</button>
+          <button class="button close">Cancel</button>
+        </footer>
+    </form>
+  </div>
+</div>
+
+{{!-- register modal --}}
+<div class="modal" id="registerModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Register</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <form class="signup">
+        <section class="modal-card-body">
+          E-mail <input type="email" id="email-input" class="input" type="text">
+          Password <input type="password" id="password-input" class="input" type="text">
+          Verify password <input class="input" type="text">
+        </section>
+        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span> <span class="msg"></span>
+        </div>
+        <footer class="modal-card-foot">
+          <button type="submit" class="button is-success form.signup">Register</button>
+          <button class="button close">Cancel</button>
+        </footer>
+    </form>
+  </div>
+</div>
+
+
+<script src="/assets/js/index.js"></script>
