@@ -5,7 +5,7 @@
     <div class="column is-one-quarter">
         <div class="column is-full cardStyle center">
             <img src="/assets/img/croc.png">
-            <br><a href="#">Add Account</a> | <a href="/">Log Out</a>
+            <br><a id="addAccountLink">Add Account</a> | <a href="/">Log Out</a>
         </div>
         {{#each accounts}}
         <div class="column is-full cardStyle">
@@ -63,7 +63,7 @@
     </div>
 </div>
 
-
+{{!-- Edit account modal --}}
 {{#each accounts}}
 <div class="modal" id="{{id}}">
   <div class="modal-background"></div>
@@ -85,5 +85,26 @@
   </div>
 </div>
 {{/each}}
+
+{{!-- add account modal --}}
+<div class="modal" id="addAccountModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add new account</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      Account name <input class="input" type="text">
+      Balance<input class="input" type="text">
+      Interest rate<input class="input" type="text">
+      Term (leave blank if none)<input class="input" type="text">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success close">Save</button>
+      <button class="button close">Cancel</button>
+    </footer>
+  </div>
+</div>
 
 

@@ -28,15 +28,22 @@ $(function() {
         });
     });
 
-
+    // open edit account modal
     $(".edit").on("click", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
         document.getElementById(id).className += ' is-active';
     });
+
+    // open add account modal
+    $("#addAccountLink").on("click", function(event) {
+        event.preventDefault();
+        document.getElementById("addAccountModal").className += ' is-active';
+    });
+
+    // kills any open modal
     $(".modal-background, .close").on("click", function(event) {
         event.preventDefault();
-        var id = $(this).data("id");
         $(".modal").removeClass("is-active");
     });
 
