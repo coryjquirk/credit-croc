@@ -19,6 +19,21 @@ router.get("/home", function(req, res) {
     });
 });
 
+router.put("/api/accounts/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+
+    console.log("condition", condition);
+
+    account.update({active: req.body.active}, condition, function(result) {
+        if (result.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
 // leave this route at the end, redirects 404 error to index
 router.get("*", function(req, res) {
     res.render("index");

@@ -4,7 +4,10 @@
                 Accounts go here, poplate detailed data to right when selected
   {{#each accounts}}
     <li>
-    {{account_name}} | {{interest}} | {{term_months}}
+
+    {{account_name}} | {{interest}} | {{term_months}} 
+    | Active? {{#if active}}YES <button class="deactivate" data-id="{{id}}" data-active="{{active}}">Click to deactivate</button>{{/if}}{{#unless active}}NO <button class="activate" data-id="{{id}}" data-active="{{active}}">Click to activate</button>{{/unless}}
+    
     </li>
   {{/each}}
                 <br> Add new account
@@ -20,5 +23,4 @@
             </div>
         </div>
     </div>
-
     
