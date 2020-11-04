@@ -1,0 +1,49 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/img/bg.jpg);
+  background-size: cover;
+  background-position: bottom;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+  width: 350px;
+  padding: 30px;
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+}
+
+#companyName {
+  font-size: 2.5rem;
+}
+
+#companySlogan {
+  font-size: 1.2rem;
+  color: rgb(11, 116, 20);
+}
+
+#about {
+  margin-top: 20px;
+  font-weight: normal;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+}
+
+#login {
+  margin-top: 20px;
+  font-weight: normal;
+}
