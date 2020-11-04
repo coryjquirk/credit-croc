@@ -27,4 +27,18 @@ $(function() {
             location.reload();
         });
     });
+
+
+    $(".edit").on("click", function(event) {
+        event.preventDefault();
+        var id = $(this).data("id");
+        document.getElementById(id).className += ' is-active';
+    });
+    $(".modal-background, .close").on("click", function(event) {
+        event.preventDefault();
+        var id = $(this).data("id");
+        $(".modal").removeClass("is-active");
+    });
+
+
 });

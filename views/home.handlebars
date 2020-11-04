@@ -18,10 +18,11 @@
             {{/if}}
             {{#unless active}}
             <a class="activate" data-id="{{id}}" data-active="{{active}}">Show</a>
-            {{/unless}} | <a href="#">Edit</a> | <a href="#">Delete</a>
+            {{/unless}} | <a class="edit" data-id="{{id}}">Edit</a> | <a href="#">Delete</a>
         </div>
         {{/each}}
     </div>
+    
     <div class="column is-three-quarters">
         <div class="column is-full cardStyle">
             Total debt: ${x} | Monthly interest fees: ${x} | Yearly interest fees ${x}
@@ -61,5 +62,28 @@
         </div>
     </div>
 </div>
+
+
+{{#each accounts}}
+<div class="modal" id="{{id}}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Editing {{account_name}}</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      Account name <input class="input" type="text" placeholder="{{account_name}}">
+      Balance<input class="input" type="text" placeholder="{{balance}}">
+      Interest rate<input class="input" type="text" placeholder="{{interest}}">
+      Term (leave blank if none)<input class="input" type="text" placeholder="{{term_months}}">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success close">Save changes</button>
+      <button class="button close">Cancel</button>
+    </footer>
+  </div>
+</div>
+{{/each}}
 
 
