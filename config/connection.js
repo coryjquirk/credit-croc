@@ -17,7 +17,7 @@ if (process.env.JAWSDB_URL) {
         host: "localhost",
         user: "root",
         password: "root",
-        // password: "]myz_y:92^s3q",
+        password: "]myz_y:92^s3q",
         database: "accounts_db"
     });
 }
