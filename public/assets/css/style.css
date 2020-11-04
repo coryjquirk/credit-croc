@@ -1,5 +1,4 @@
 html {
-    padding-top: 2vh;
     display: flex;
     height: 100%;
     justify-content: center;
@@ -62,6 +61,7 @@ html {
 }
 
 #home {
+    padding-top: 2vh;
     width: 100vw;
 }
 
