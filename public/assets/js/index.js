@@ -1,30 +1,34 @@
 $(function() {
-    $(".activate").on("click", function(event) {
+
+    // open login modal
+    $(".loginButton").on("click", function(event) {
         event.preventDefault();
-        console.log("activate CLICKED");
-        var id = $(this).data("id");
-        var activeState = {
-            active: 1
-        };
-        $.ajax("/api/accounts/" + id, {
-            type: "PUT",
-            data: activeState
-        }).then(function() {
-            location.reload();
-        });
+        document.getElementById("loginModal").className += ' is-active';
     });
-    $(".deactivate").on("click", function(event) {
+
+    // login modal login button temp redirect to home - todo login verification
+    $(".loginModalButton").on("click", function(event) {
         event.preventDefault();
-        console.log("deactivate CLICKED");
-        var id = $(this).data("id");
-        var activeState = {
-            active: 0
-        };
-        $.ajax("/api/accounts/" + id, {
-            type: "PUT",
-            data: activeState
-        }).then(function() {
-            location.reload();
-        });
+        window.location.href = "/home";
     });
+
+    // open register modal
+    $(".registerButton").on("click", function(event) {
+        event.preventDefault();
+        document.getElementById("registerModal").className += ' is-active';
+    });
+
+    // register modal login button temp redirect to home - todo register users setup
+    $(".registerModalButton").on("click", function(event) {
+        event.preventDefault();
+        window.location.href = "/home";
+    });
+
+    // kills any open modal
+    $(".modal-background, .close").on("click", function(event) {
+        event.preventDefault();
+        $(".modal").removeClass("is-active");
+    });
+
+
 });

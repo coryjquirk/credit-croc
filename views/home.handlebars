@@ -1,26 +1,112 @@
-    <div class="columns" id="home">
-        <div class="column is-one-quarter">
-            <div class="column is-full cardStyle">
-                Accounts go here, poplate detailed data to right when selected
-  {{#each accounts}}
-    <li>
 
-    {{account_name}} | {{interest}} | {{term_months}} 
-    | Active? {{#if active}}YES <button class="deactivate" data-id="{{id}}" data-active="{{active}}">Click to deactivate</button>{{/if}}{{#unless active}}NO <button class="activate" data-id="{{id}}" data-active="{{active}}">Click to activate</button>{{/unless}}
-    
-    </li>
-  {{/each}}
-                <br> Add new account
-                <br> Logout
-            </div>
+
+
+
+<div class="columns" id="home">
+    <div class="column is-one-quarter">
+        <div class="column is-full cardStyle center">
+            <img src="/assets/img/croc.png">
+            <br><a id="addAccountLink">Add Account</a> | <a href="/">Log Out</a>
         </div>
-        <div class="column is-three-quarters">
-            <div class="column is-full cardStyle">
-                Total debt: ${x} | Monthly interest fees: ${x} | Yearly interest fees ${x}
-                <br>Total debt line should stay here and update when accounts are added/modified, display a nice chart breaking down debt by account if no account currently selected to view details.
-                <br> ${Individual account data here when selected}<br> ${tables, charts, cool stuf here}<br> Options to change chart type, run payment models<br> IE: Set payment ammount, get time and total cost to payoff | Set time to pay off, get total
-                cost and payment amount | Compare savings?
+        {{#each accounts}}
+        <div class="column is-full cardStyle">
+            {{account_name}} | {{interest}}% | ${{balance}}
+            {{#if term_months}} | {{term_months}}mos
+            {{/if}}
+            <br>
+            {{#if active}}
+                <a class="deactivate" data-id="{{id}}" data-active="{{active}}">Hide</a>
+            {{/if}}
+            {{#unless active}}
+            <a class="activate" data-id="{{id}}" data-active="{{active}}">Show</a>
+            {{/unless}} | <a class="edit" data-id="{{id}}">Edit</a> | <a href="#">Delete</a>
+        </div>
+        {{/each}}
+    </div>
+    
+    <div class="column is-three-quarters">
+        <div class="column is-full cardStyle">
+            Total debt: ${x} | Monthly interest fees: ${x} | Yearly interest fees ${x}
+            <br>Total debt line should stay here and update when accounts are added/modified, display a nice chart breaking down debt by account if no account currently selected to view details.
+            <br> ${Individual account data here when selected}<br> ${tables, charts, cool stuf here}<br> Options to change chart type, run payment models<br> IE: Set payment ammount, get time and total cost to payoff | Set time to pay off, get total
+            cost and payment amount | Compare savings?
+            <div id="container" style="width:100%; height:400px;">
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var myChart = Highcharts.chart('container', {
+                            chart: {
+                                type: 'pie'
+                            },
+
+                            title: {
+                                text: 'Debt'
+                            },
+                            series: [{
+                            name: 'Debt',
+                            colorByPoint: true,
+                            
+                            data: [
+                                {{#each accounts}}
+                                {{#if active}}
+                                {
+                                    name: '{{account_name}}',
+                                    y: {{balance}},
+                                },
+                                {{/if}}
+                                {{/each}}
+                            ]
+                            }]
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
-    
+</div>
+
+{{!-- Edit account modal --}}
+{{#each accounts}}
+<div class="modal" id="{{id}}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Editing {{account_name}}</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      Account name <input class="input" type="text" placeholder="{{account_name}}">
+      Balance<input class="input" type="text" placeholder="{{balance}}">
+      Interest rate<input class="input" type="text" placeholder="{{interest}}">
+      Term (leave blank if none)<input class="input" type="text" placeholder="{{term_months}}">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success close">Save changes</button>
+      <button class="button close">Cancel</button>
+    </footer>
+  </div>
+</div>
+{{/each}}
+
+{{!-- add account modal --}}
+<div class="modal" id="addAccountModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add new account</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      Account name <input class="input" type="text">
+      Balance<input class="input" type="text">
+      Interest rate<input class="input" type="text">
+      Term (leave blank if none)<input class="input" type="text">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success close">Save</button>
+      <button class="button close">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+
+<script src="/assets/js/home.js"></script>

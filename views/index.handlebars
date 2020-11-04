@@ -1,9 +1,55 @@
-<div class="columns" id="index">
-    <div class="column">
-    <img src="/assets/img/croc.png"><br>
-    <sectiion id="companyName">CREDIT CROC</sectiion>
-    <section id="companySlogan">Take a bite out of debt!</section>
-    <section id="about">Managing your debt is lame. Credit Croc is cool. Credit Croc keeps track of your debt so you don't have to!</section>
-    <section id="login"><a href="/home">Login</a> | <a href="#">Register</a></section>
+<div id="indexContainer">
+    <div class="columns" id="index">
+        <div class="column">
+            <img src="/assets/img/croc.png"><br>
+            <sectiion id="companyName">CREDIT CROC</sectiion>
+            <section id="companySlogan">Take a bite out of debt!</section>
+            <section id="about">Managing your debt is lame. Credit Croc is cool. Credit Croc keeps track of your debt so you don't have to!</section>
+            <section id="login"><a class="loginButton">Login</a> | <a class="registerButton">Register</a></section>
+        </div>
     </div>
 </div>
+
+
+
+{{!-- login modal --}}
+<div class="modal" id="loginModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      E-mail <input class="input" type="text">
+      Password <input class="input" type="text">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success loginModalButton">Login</button>
+      <button class="button close">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+{{!-- register modal --}}
+<div class="modal" id="registerModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Register</p>
+      <button class="delete close" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      E-mail <input class="input" type="text">
+      Password <input class="input" type="text">
+      Verify password <input class="input" type="text">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success registerModalButton">Register</button>
+      <button class="button close">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+
+<script src="/assets/js/index.js"></script>
