@@ -1,6 +1,7 @@
 
 
 
+
 <div class="columns" id="home">
     <div class="column is-one-quarter">
         <div class="column is-full cardStyle center">
@@ -10,7 +11,7 @@
         {{#each accounts}}
         <div class="column is-full cardStyle">
             {{account_name}} | {{interest}}% | ${{balance}}
-            {{#if term_months}} | {{term_months}}
+            {{#if term_months}} | {{term_months}}mos
             {{/if}}
             <br>
             {{#if active}}
@@ -108,3 +109,4 @@
 </div>
 
 
+<script src="/assets/js/home.js"></script>

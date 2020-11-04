@@ -1,44 +1,15 @@
 $(function() {
-    $(".activate").on("click", function(event) {
+
+    // open login modal
+    $(".loginButton").on("click", function(event) {
         event.preventDefault();
-        console.log("activate CLICKED");
-        var id = $(this).data("id");
-        var activeState = {
-            active: 1
-        };
-        $.ajax("/api/accounts/" + id, {
-            type: "PUT",
-            data: activeState
-        }).then(function() {
-            location.reload();
-        });
-    });
-    $(".deactivate").on("click", function(event) {
-        event.preventDefault();
-        console.log("deactivate CLICKED");
-        var id = $(this).data("id");
-        var activeState = {
-            active: 0
-        };
-        $.ajax("/api/accounts/" + id, {
-            type: "PUT",
-            data: activeState
-        }).then(function() {
-            location.reload();
-        });
+        document.getElementById("loginModal").className += ' is-active';
     });
 
-    // open edit account modal
-    $(".edit").on("click", function(event) {
+    // login modal login button temp redirect to home - todo login verification
+    $(".loginModalButton").on("click", function(event) {
         event.preventDefault();
-        var id = $(this).data("id");
-        document.getElementById(id).className += ' is-active';
-    });
-
-    // open add account modal
-    $("#addAccountLink").on("click", function(event) {
-        event.preventDefault();
-        document.getElementById("addAccountModal").className += ' is-active';
+        window.location.href = "/home";
     });
 
     // kills any open modal
