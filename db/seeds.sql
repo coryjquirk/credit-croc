@@ -1,7 +1,9 @@
---populating burgers table with some entries
-INSERT INTO accounts (account_name, interest, active)
-VALUES ("Amazon Visa", 3.2, true);
-INSERT INTO accounts (account_name, interest, term_months, active)
-VALUES ("BND Student Loans", 1.7, 36, true);
-INSERT INTO accounts (account_name, interest, term_months, active)
-VALUES ("Mortgage", 3.9, 48, false);
+INSERT INTO accounts (account_name, balance, interest, term_months, active) VALUES 
+	('Amazon Visa', 1200, 21.99, null, TRUE),
+	('Green Amex', 6100, 15.99, null, TRUE),
+	('Target Card', 2700, 18.99, null, TRUE),
+	('Balance Xfer Visa', 9500, 0, null, TRUE),
+    ('Mastercard', 0, 24.99, null, FALSE),
+	('Car Loan', 15000, 1.99, 48, TRUE),
+	('Student Loan', 64000, 4.99, 240, TRUE),
+	('Mortgage', 275000, 3.625, 360, TRUE);

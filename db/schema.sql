@@ -11,7 +11,8 @@ CREATE TABLE accounts(
     id INTEGER AUTO_INCREMENT NOT NULL,
     PRIMARY KEY(id),
     account_name VARCHAR(100),
-    interest DECIMAL,
+    balance INTEGER,
+    interest DECIMAL(4,2),
     term_months INTEGER,
     active BOOLEAN NOT NULL
 );
