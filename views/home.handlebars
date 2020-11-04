@@ -1,26 +1,51 @@
-    <div class="columns" id="home">
-        <div class="column is-one-quarter">
-            <div class="column is-full cardStyle">
-                Accounts go here, poplate detailed data to right when selected
-  {{#each accounts}}
-    <li>
 
-    {{account_name}} | {{interest}} | {{term_months}} 
-    | Active? {{#if active}}YES <button class="deactivate" data-id="{{id}}" data-active="{{active}}">Click to deactivate</button>{{/if}}{{#unless active}}NO <button class="activate" data-id="{{id}}" data-active="{{active}}">Click to activate</button>{{/unless}}
-    
-    </li>
-  {{/each}}
-                <br> Add new account
-                <br> Logout
-            </div>
+
+
+<div class="columns" id="home">
+    <div class="column is-one-quarter">
+        {{#each accounts}}
+        <div class="column is-full cardStyle">
+            {{account_name}} | {{interest}}% | ${{balance}}
+            | Active? {{#if active}}YES <button class="deactivate" data-id="{{id}}" data-active="{{active}}">Click to deactivate</button>{{/if}}{{#unless active}}NO <button class="activate" data-id="{{id}}" data-active="{{active}}">Click to activate</button>{{/unless}}
         </div>
-        <div class="column is-three-quarters">
-            <div class="column is-full cardStyle">
-                Total debt: ${x} | Monthly interest fees: ${x} | Yearly interest fees ${x}
-                <br>Total debt line should stay here and update when accounts are added/modified, display a nice chart breaking down debt by account if no account currently selected to view details.
-                <br> ${Individual account data here when selected}<br> ${tables, charts, cool stuf here}<br> Options to change chart type, run payment models<br> IE: Set payment ammount, get time and total cost to payoff | Set time to pay off, get total
-                cost and payment amount | Compare savings?
+        {{/each}}
+    </div>
+    <div class="column is-three-quarters">
+        <div class="column is-full cardStyle">
+            Total debt: ${x} | Monthly interest fees: ${x} | Yearly interest fees ${x}
+            <br>Total debt line should stay here and update when accounts are added/modified, display a nice chart breaking down debt by account if no account currently selected to view details.
+            <br> ${Individual account data here when selected}<br> ${tables, charts, cool stuf here}<br> Options to change chart type, run payment models<br> IE: Set payment ammount, get time and total cost to payoff | Set time to pay off, get total
+            cost and payment amount | Compare savings?
+            <div id="container" style="width:100%; height:400px;">
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('container', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Total Debt'
+            },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        
+        data: [
+        {{#each accounts}}
+        {{#if active}}
+        {
+            name: '{{account_name}}',
+            y: {{balance}},
+        },
+        {{/if}}
+        {{/each}}
+        ]
+    }]
+        });
+    });
+                </script>
             </div>
         </div>
     </div>
+</div>
     
