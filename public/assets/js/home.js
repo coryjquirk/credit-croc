@@ -37,6 +37,76 @@ $(function() {
         });
     });
 
+    $(".delete-acct").on("click", function(event) {
+        var id = $(this).data("id");
+        // Send the DELETE request.
+        $.ajax("/api/accounts/" + id, {
+          type: "DELETE"
+        }).then(
+          function() {
+            console.log("deleted acct", id);
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
+//grabs inputs from newAccount modal
+      $("#newAcctSubmit").on("click", function(event) {
+        event.preventDefault();
+        console.log("NEW ACCOUNT IS CLICKED")
+        var newAccount = {
+            account_name: $("#newAccountName")
+                .val()
+                .trim(),
+            balance: $("#newBalance")
+                .val(),
+            interest: $("#newInterest")
+                .val(),
+            term_months: $("#newTerm")
+                .val(),
+            active: 1
+        };
+        if (($("#newTerm").val())===""){
+            newAccount.term_months="0"
+        }
+        console.log(newAccount)
+        $.ajax("/api/accounts", {
+            type: "POST",
+            data: newAccount
+        }).then(function() {
+            location.reload();
+        });
+    });
+
+    $("#acctUpdate").on("click", function(event) {
+        event.preventDefault();
+        console.log("UPDATE ACCT IS CLICKED")
+        var updatedAccount = {
+            account_name: $("#updateAccountName")
+                .val()
+                .trim(),
+            balance: $("#updateBalance")
+                .val(),
+            interest: $("#updateInterest")
+                .val(),
+            term_months: $("#updateTerm")
+                .val(),
+            active: 1
+        };
+        if (($("#newTerm").val())===""){
+            updatedAccount.term_months='0'
+        }
+        console.log("Term:"+updatedAccount.term_months)
+        console.log(updatedAccount)
+        $.ajax("/api/accounts", {
+            type: "PUT",
+            data: updatedAccount
+        }).then(function() {
+            location.reload();
+        });
+    });
+
+
     // open edit account modal
     $(".edit").on("click", function(event) {
         event.preventDefault();
