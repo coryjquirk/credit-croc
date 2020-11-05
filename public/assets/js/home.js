@@ -37,6 +37,23 @@ $(function() {
         });
     });
 
+    $(".delete-acct").on("click", function(event) {
+        var id = $(this).data("id");
+        console.log("DELETER CLICKED")
+        // Send the DELETE request.
+        $.ajax("/api/accounts/" + id, {
+          type: "DELETE"
+        }).then(
+          function() {
+            console.log("deleted acct", id);
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
+
+
+
     // open edit account modal
     $(".edit").on("click", function(event) {
         event.preventDefault();
