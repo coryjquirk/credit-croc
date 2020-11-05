@@ -18,9 +18,9 @@ var account = {
         });
     },
     delete: function(condition, cb) {
-    orm.delete("accounts", condition, function(res) {
-        cb(res);
-    });
+        orm.delete("accounts", condition, function(res) {
+            cb(res);
+        });
     }
 };
 

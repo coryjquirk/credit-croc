@@ -81,7 +81,7 @@ $(function() {
     $("#acctUpdate").on("click", function(event) {
         event.preventDefault();
         console.log("UPDATE ACCT IS CLICKED")
-        var newAccount = {
+        var updatedAccount = {
             account_name: $("#updateAccountName")
                 .val()
                 .trim(),
@@ -94,13 +94,13 @@ $(function() {
             active: 1
         };
         if (($("#newTerm").val())===""){
-            newAccount.term_months="0"
+            updatedAccount.term_months='0'
         }
-        console.log("Term:"+newAccount.term_months)
-        console.log(newAccount)
+        console.log("Term:"+updatedAccount.term_months)
+        console.log(updatedAccount)
         $.ajax("/api/accounts", {
-            type: "POST",
-            data: newAccount
+            type: "PUT",
+            data: updatedAccount
         }).then(function() {
             location.reload();
         });

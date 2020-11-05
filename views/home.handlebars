@@ -19,7 +19,9 @@
             {{/if}}
             {{#unless active}}
             <a class="activate" data-id="{{id}}" data-active="{{active}}">Show</a>
-            {{/unless}} | <a class="edit" data-id="{{id}}">Edit</a> | <a class="delete-acct" data-id="{{id}}" href="#">Delete</a>
+            {{/unless}} |
+             {{!-- <a class="edit" data-id="{{id}}">Edit</a> |  --}}
+             <a class="delete-acct" data-id="{{id}}" href="#">Delete</a>
         </div>
         {{/each}}
     </div>

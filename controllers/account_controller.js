@@ -20,10 +20,6 @@ router.get("/home", function(req, res) {
 });
 
 router.put("/api/accounts/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-
-    console.log("condition", condition);
-
     account.update({active: req.body.active}, condition, function(result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
@@ -34,9 +30,11 @@ router.put("/api/accounts/:id", function(req, res) {
     });
 });
 
-router.post("/api/accounts", function(req, res) {
+router.put("/api/accounts", function(req, res) {
+    var condition = "ididid = " + req.params.id;
+    console.log("condition", condition);
     // (cols, vals, cb)
-    account.create(["account_name", "balance", "interest", "term_months", "active"], [
+    account.update(["account_name", "balance", "interest", "term_months", "active"], [
         req.body.account_name, req.body.balance, req.body.interest, req.body.term_months, 1],
         function(result) {
         // Send back the ID of the new account
@@ -44,11 +42,9 @@ router.post("/api/accounts", function(req, res) {
     });
 });
 
-router.put("/api/accounts", function(req, res) {
-    var condition = "id = " + req.params.id;
-    console.log("condition", condition);
+router.post("/api/accounts", function(req, res) {
     // (cols, vals, cb)
-    account.update(["account_name", "balance", "interest", "term_months", "active"], [
+    account.create(["account_name", "balance", "interest", "term_months", "active"], [
         req.body.account_name, req.body.balance, req.body.interest, req.body.term_months, 1],
         function(result) {
         // Send back the ID of the new account
