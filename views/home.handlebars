@@ -26,10 +26,7 @@
     
     <div class="column is-three-quarters">
         <div class="column is-full cardStyle">
-            Total debt: ${x} | Monthly interest fees: ${x} | Yearly interest fees ${x}
-            <br>Total debt line should stay here and update when accounts are added/modified, display a nice chart breaking down debt by account if no account currently selected to view details.
-            <br> ${Individual account data here when selected}<br> ${tables, charts, cool stuf here}<br> Options to change chart type, run payment models<br> IE: Set payment ammount, get time and total cost to payoff | Set time to pay off, get total
-            cost and payment amount | Compare savings?
+            Total debt: $<span id="totalDebt"></span> | Yearly fees: $<span id="feesYr"></span> | Monthly fees: $<span id="feesMo"></span> | Daily fees: $<span id="feesDay"></span>
             <div id="container" style="width:100%; height:400px;">
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
@@ -108,5 +105,28 @@
   </div>
 </div>
 
+
+<script>
+  totalDebt = 0
+  totalFeesYr = 0
+  totalFeesMo = 0
+  totalFeesDay = 0
+  {{#each accounts}}
+  {{#if active}}
+    var thisInt = {{interest}} / 100
+    var thisFeesYr = thisInt * {{balance}}
+    var thisFeesMo = thisFeesYr / 12
+    var thisFeesDay = thisFeesYr / 365
+    totalDebt = totalDebt + {{balance}}
+    totalFeesYr = totalFeesYr + thisFeesYr
+    totalFeesMo = totalFeesMo + thisFeesMo
+    totalFeesDay = totalFeesDay + thisFeesDay
+  {{/if}}
+  {{/each}}
+  document.getElementById("totalDebt").innerHTML = totalDebt
+  document.getElementById("feesYr").innerHTML = totalFeesYr.toFixed(2)
+  document.getElementById("feesMo").innerHTML = totalFeesMo.toFixed(2)
+  document.getElementById("feesDay").innerHTML = totalFeesDay.toFixed(2)
+</script>
 
 <script src="/assets/js/home.js"></script>
