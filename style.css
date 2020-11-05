@@ -1,0 +1,130 @@
+html {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    background-image: url(/assets/img/bg.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+#indexContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#index {
+    width: 400px;
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    line-height: 150%;
+}
+
+#companyName {
+    font-size: 2.5rem;
+}
+
+#companySlogan {
+    font-size: 1.2rem;
+    color: rgb(11, 116, 20);
+}
+
+#about {
+    margin-top: 20px;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+}
+
+#login {
+    margin-top: 20px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.cardStyle {
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+}
+
+#home {
+    padding-top: 2vh;
+    width: 100vw;
+}
+
+.center {
+    text-align: center;
+}
+
+#breakdown {
+    background-color: white;
+    color: rgb(11, 116, 20);
+    font-size: large;
+    font-weight: bolder;
+    width: 100vw;
+    height: 100vh;
+}
+
+#info {
+    background-color: white;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+}
+
+#addAccountLink {
+    background-color: white;
+    color: rgb(11, 116, 20);
+    font-size: large;
+    font-weight: bolder;
+}
+
+#logOut {
+    background-color: white;
+    color: rgb(11, 116, 20);
+    font-size: large;
+    font-weight: bolder;
+}
+
+#loans {
+    background-color: white;
+    color: rgb(11, 116, 20);
+    font-size: large;
+    font-weight: bolder;
+}
+
+#about {
+    color: rgb(11, 116, 20);
+    font-size: large;
+    font-weight: bolder;
+}
+
+#register {
+    color:black;
+    font-size: large;
+    font-weight: bolder;
+}
+
+#login {
+    color:black;
+    font-size: large;
+    font-weight: bolder;
+}
