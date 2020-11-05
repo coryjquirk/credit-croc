@@ -22,9 +22,6 @@ Managing personal finances, especially credit cards and bank loans, can be stres
 * Pie chart for easily visualizing info
 * Easily add/delete accounts
 
-### Screenshot
-<img src="https://coryjquirk.github.io/weather-dashboard/screenshot.PNG" alt="application screenshot">
-
 ## Features in Development
 * Integrating a third party API to automatically pull user's credit info from a public database.
 * Additional calculations and database manipulation available to the user.
