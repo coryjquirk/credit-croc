@@ -74,13 +74,13 @@
       <button class="delete close" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      Account name <input class="input" type="text" placeholder="{{account_name}}">
-      Balance<input class="input" type="text" placeholder="{{balance}}">
-      Interest rate<input class="input" type="text" placeholder="{{interest}}">
-      Term (leave blank if none)<input class="input" type="text" placeholder="{{term_months}}">
+      Account name <input id="updateAccountName" class="input" type="text" placeholder="{{account_name}}">
+      Balance<input id="updateBalance" class="input" type="text" placeholder="{{balance}}">
+      Interest rate<input id="updateInterest" class="input" type="text" placeholder="{{interest}}">
+      Term (leave blank if none)<input id="updateTerm" class="input" type="text" placeholder="{{term_months}}">
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success close">Save changes</button>
+      <button id="acctUpdate" class="button is-success close">Save changes</button>
       <button class="button close">Cancel</button>
     </footer>
   </div>
@@ -95,14 +95,16 @@
       <p class="modal-card-title">Add new account</p>
       <button class="delete close" aria-label="close"></button>
     </header>
+
     <section class="modal-card-body">
-      Account name <input class="input" type="text">
-      Balance<input class="input" type="text">
-      Interest rate<input class="input" type="text">
-      Term (leave blank if none)<input class="input" type="text">
+      Account name <input id="newAccountName" class="input" type="text" placeholder="{{account_name}}">
+      Balance<input id="newBalance" class="input" type="text" placeholder="{{balance}}">
+      Interest rate<input id="newInterest" class="input" type="text" placeholder="{{interest}}">
+      Term (leave blank if none)<input id="newTerm" class="input" type="text" placeholder="{{term_months}}">
     </section>
+
     <footer class="modal-card-foot">
-      <button class="button is-success close">Save</button>
+      <button id="newAcctSubmit" class="button is-success close">Save</button>
       <button class="button close">Cancel</button>
     </footer>
   </div>

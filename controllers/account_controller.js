@@ -34,6 +34,28 @@ router.put("/api/accounts/:id", function(req, res) {
     });
 });
 
+router.post("/api/accounts", function(req, res) {
+    // (cols, vals, cb)
+    account.create(["account_name", "balance", "interest", "term_months", "active"], [
+        req.body.account_name, req.body.balance, req.body.interest, req.body.term_months, 1],
+        function(result) {
+        // Send back the ID of the new account
+        res.json({ id: result.insertId });
+    });
+});
+
+router.put("/api/accounts", function(req, res) {
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
+    // (cols, vals, cb)
+    account.update(["account_name", "balance", "interest", "term_months", "active"], [
+        req.body.account_name, req.body.balance, req.body.interest, req.body.term_months, 1],
+        function(result) {
+        // Send back the ID of the new account
+        res.json({ id: result.insertId });
+    });
+});
+
 router.delete("/api/accounts/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
