@@ -95,7 +95,7 @@ $(function() {
             id: this.id
         };
         console.log(updatedAccount)
-        if (($("#newTerm").val()) === "") {
+        if (($("#updateTerm").val()) === "") {
             updatedAccount.term_months = '0'
         }
         console.log("Term:" + updatedAccount.term_months)
