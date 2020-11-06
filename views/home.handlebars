@@ -1,7 +1,3 @@
-
-
-
-
 <div class="columns" id="home">
     <div class="column is-one-quarter">
         <div class="column is-full cardStyle center">
@@ -25,7 +21,6 @@
         </div>
         {{/each}}
     </div>
-    
     <div class="column is-three-quarters">
         <div class="column is-full cardStyle">
             Total debt: $<span id="totalDebt"></span> | Yearly fees: $<span id="feesYr"></span> | Monthly fees: $<span id="feesMo"></span> | Daily fees: $<span id="feesDay"></span>
@@ -37,7 +32,6 @@
                             chart: {
                                 type: 'pie'
                             },
-
                             title: {
                                 text: 'Debt Breakdown'
                             },
@@ -68,14 +62,12 @@
                             chart: {
                                 type: 'pie'
                             },
-
                             title: {
                                 text: 'Yearly Interest Fees'
                             },
                             series: [{
                             name: 'Interest(yr)',
                             colorByPoint: true,
-                            
                             data: [
                                 {{#each accounts}}
                                 {{#if active}}
@@ -91,8 +83,7 @@
                     });
                 </script>
             </div>
-
-          Chart view: <a id="showDebtChart">Debt</a> | <a id="showFeesYrChart">Interest</a>
+            Chart view: <a id="showDebtChart">Debt</a> | <a id="showFeesYrChart">Interest</a>
         </div>
     </div>
 </div>
@@ -128,14 +119,12 @@
       <p class="modal-card-title">Add new account</p>
       <button class="delete close" aria-label="close"></button>
     </header>
-
     <section class="modal-card-body">
       Account name <input id="newAccountName" class="input" type="text" placeholder="{{account_name}}">
       Balance<input id="newBalance" class="input" type="text" placeholder="{{balance}}">
       Interest rate<input id="newInterest" class="input" type="text" placeholder="{{interest}}">
       Term (leave blank if none)<input id="newTerm" class="input" type="text" placeholder="{{term_months}}">
     </section>
-
     <footer class="modal-card-foot">
       <button id="newAcctSubmit" class="button is-success close">Save</button>
       <button class="button close">Cancel</button>
@@ -143,7 +132,7 @@
   </div>
 </div>
 
-
+{{!-- math logic --}}
 <script>
   totalDebt = 0
   totalFeesYr = 0

@@ -95,8 +95,11 @@ $(function() {
             id: this.id
         };
         console.log(updatedAccount)
-        if (($("#updateTerm").val()) === "") {
+        if (($("#updateTerm" + this.id).val()) === "") {
             updatedAccount.term_months = '0'
+        }
+        if (updatedAccount.account_name.indexOf(' ') <= 0) {
+            updatedAccount.account_name = ' ' + updatedAccount.account_name + ' '
         }
         console.log("Term:" + updatedAccount.term_months)
         console.log(updatedAccount)
@@ -128,7 +131,6 @@ $(function() {
         $(".modal").removeClass("is-active");
     });
 
-
     // show/hide charts
     $("#showDebtChart").on("click", function(event) {
         event.preventDefault();
@@ -141,6 +143,5 @@ $(function() {
         $("#feesYrChart").removeClass("hide");
         document.getElementById("debtChart").className += ' hide';
     });
-
 
 });

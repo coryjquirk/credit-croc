@@ -30,11 +30,7 @@ $(function() {
         $(".modal").removeClass("is-active");
     });
 
-
-
-
-
-
+    // FUTURE DEV - login system
     // // login stuffs
     // $(document).ready(function() {
     //     // Getting references to our form and inputs
@@ -122,9 +118,5 @@ $(function() {
     //         $("#alert").fadeIn(500);
     //     }
     // });
-
-
-
-
 
 });
