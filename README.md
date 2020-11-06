@@ -7,8 +7,8 @@ Managing personal finances, especially credit cards and bank loans, can be stres
 ## Links
 * Deployed app on Heroku: [https://hungry-croconaw.herokuapp.com/](https://hungry-croconaw.herokuapp.com/)
 * Repository: [https://github.com/coryjquirk/croconaw-squad](https://github.com/coryjquirk/croconaw-squad)
-### Screenshot
-* Coming soon...
+### Demo
+<img src="https://coryjquirk.github.io/croconaw-squad/assets/img/croc.png" alt="app demo">
 
 ## Usage
 * Log in or register
