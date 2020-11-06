@@ -78,7 +78,7 @@ $(function() {
         });
     });
 
-    $("#acctUpdate").on("click", function(event) {
+    $(".acctUpdate").on("click", function(event) {
         event.preventDefault();
         console.log("UPDATE ACCT IS CLICKED")
         var updatedAccount = {
@@ -91,7 +91,8 @@ $(function() {
                 .val(),
             term_months: $("#updateTerm")
                 .val(),
-            active: 1
+            active: 1,
+            id: this.id
         };
         if (($("#newTerm").val()) === "") {
             updatedAccount.term_months = '0'

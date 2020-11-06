@@ -20,7 +20,7 @@
             {{#unless active}}
             <a class="activate" data-id="{{id}}" data-active="{{active}}">Show</a>
             {{/unless}} |
-             {{!-- <a class="edit" data-id="{{id}}">Edit</a> |  --}}
+             <a class="edit" data-id="{{id}}">Edit</a> | 
              <a class="delete-acct" data-id="{{id}}" href="#">Delete</a>
         </div>
         {{/each}}
@@ -107,13 +107,13 @@
       <button class="delete close" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      Account name <input id="updateAccountName" class="input" type="text" placeholder="{{account_name}}">
-      Balance<input id="updateBalance" class="input" type="text" placeholder="{{balance}}">
-      Interest rate<input id="updateInterest" class="input" type="text" placeholder="{{interest}}">
-      Term (leave blank if none)<input id="updateTerm" class="input" type="text" placeholder="{{term_months}}">
+      Account name <input id="updateAccountName" class="input" type="text" value="{{account_name}}">
+      Balance<input id="updateBalance" class="input" type="text" value="{{balance}}">
+      Interest rate<input id="updateInterest" class="input" type="text" value="{{interest}}">
+      Term (leave blank if none)<input id="updateTerm" class="input" type="text" value="{{term_months}}">
     </section>
     <footer class="modal-card-foot">
-      <button id="acctUpdate" class="button is-success close">Save changes</button>
+      <button id="{{id}}" class="acctUpdate button is-success close">Save changes</button>
       <button class="button close">Cancel</button>
     </footer>
   </div>
