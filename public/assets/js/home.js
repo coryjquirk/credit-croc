@@ -131,7 +131,6 @@ $(function() {
         $(".modal").removeClass("is-active");
     });
 
-
     // show/hide charts
     $("#showDebtChart").on("click", function(event) {
         event.preventDefault();
@@ -144,6 +143,5 @@ $(function() {
         $("#feesYrChart").removeClass("hide");
         document.getElementById("debtChart").className += ' hide';
     });
-
 
 });

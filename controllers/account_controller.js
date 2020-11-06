@@ -1,7 +1,5 @@
 var express = require("express");
-
 var router = express.Router();
-
 // Import the model (account.js) to use its database functions.
 var account = require("../models/account.js");
 
@@ -20,9 +18,7 @@ router.get("/home", function(req, res) {
 
 router.put("/api/accounts/:id", function(req, res) {
     var condition = "id = " + req.params.id;
-
     console.log("condition", condition);
-
     account.update({ active: req.body.active }, condition, function(result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
@@ -61,7 +57,6 @@ router.post("/api/accounts", function(req, res) {
 
 router.delete("/api/accounts/:id", function(req, res) {
     var condition = "id = " + req.params.id;
-
     account.delete(condition, function(result) {
         if (result.affectedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
