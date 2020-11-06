@@ -16,8 +16,8 @@ if (process.env.JAWSDB_URL) {
         host: "localhost",
         user: "root",
         // password: "root",
-        password: "]myz_y:92^s3q", // cory local
-        // password: "root", // josh local
+        // password: "]myz_y:92^s3q", // cory local
+        password: "root", // josh local
         database: "accounts_db"
     });
 }
