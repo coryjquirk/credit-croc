@@ -82,18 +82,19 @@ $(function() {
         event.preventDefault();
         console.log("UPDATE ACCT IS CLICKED")
         var updatedAccount = {
-            account_name: $("#updateAccountName")
+            account_name: $("#updateAccountName" + this.id)
                 .val()
                 .trim(),
-            balance: $("#updateBalance")
+            balance: $("#updateBalance" + this.id)
                 .val(),
-            interest: $("#updateInterest")
+            interest: $("#updateInterest" + this.id)
                 .val(),
-            term_months: $("#updateTerm")
+            term_months: $("#updateTerm" + this.id)
                 .val(),
             active: 1,
             id: this.id
         };
+        console.log(updatedAccount)
         if (($("#newTerm").val()) === "") {
             updatedAccount.term_months = '0'
         }

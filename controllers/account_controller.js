@@ -14,7 +14,6 @@ router.get("/home", function(req, res) {
         var hbsObject = {
             accounts: data
         };
-        console.log(hbsObject);
         res.render("home", hbsObject);
     });
 });

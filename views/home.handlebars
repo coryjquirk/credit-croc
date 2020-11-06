@@ -107,10 +107,10 @@
       <button class="delete close" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      Account name <input id="updateAccountName" class="input" type="text" value="{{account_name}}">
-      Balance<input id="updateBalance" class="input" type="text" value="{{balance}}">
-      Interest rate<input id="updateInterest" class="input" type="text" value="{{interest}}">
-      Term (leave blank if none)<input id="updateTerm" class="input" type="text" value="{{term_months}}">
+      Account name <input id="updateAccountName{{id}}" class="input" type="text" value="{{account_name}}">
+      Balance<input id="updateBalance{{id}}" class="input" type="text" value="{{balance}}">
+      Interest rate<input id="updateInterest{{id}}" class="input" type="text" value="{{interest}}">
+      Term (leave blank if none)<input id="updateTerm{{id}}" class="input" type="text" value="{{term_months}}">
     </section>
     <footer class="modal-card-foot">
       <button id="{{id}}" class="acctUpdate button is-success close">Save changes</button>
