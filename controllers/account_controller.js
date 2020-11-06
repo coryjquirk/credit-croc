@@ -14,7 +14,6 @@ router.get("/home", function(req, res) {
         var hbsObject = {
             accounts: data
         };
-        console.log(hbsObject);
         res.render("home", hbsObject);
     });
 });
@@ -35,17 +34,19 @@ router.put("/api/accounts/:id", function(req, res) {
 });
 
 router.put("/api/accounts", function(req, res) {
-    var condition = "id = " + req.params.id;
+    var condition = "id = " + req.body.id;
     console.log("condition", condition);
     // (cols, vals, cb)
-    account.update(["account_name", "balance", "interest", "term_months", "active"], [
-            req.body.account_name, req.body.balance, req.body.interest, req.body.term_months, 1
-        ],
-        function(result) {
-            // Send back the ID of the new account
-            res.json({ id: result.insertId });
-        });
+    account.update({ account_name: req.body.account_name, balance: req.body.balance, interest: req.body.interest, term_months: req.body.term_months, active: 1 }, condition, function(result) {
+        if (result.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
 });
+
 
 router.post("/api/accounts", function(req, res) {
     // (cols, vals, cb)

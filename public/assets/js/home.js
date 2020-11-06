@@ -41,17 +41,17 @@ $(function() {
         var id = $(this).data("id");
         // Send the DELETE request.
         $.ajax("/api/accounts/" + id, {
-          type: "DELETE"
+            type: "DELETE"
         }).then(
-          function() {
-            console.log("deleted acct", id);
-            // Reload the page to get the updated list
-            location.reload();
-          }
+            function() {
+                console.log("deleted acct", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
         );
-      });
-//grabs inputs from newAccount modal
-      $("#newAcctSubmit").on("click", function(event) {
+    });
+    //grabs inputs from newAccount modal
+    $("#newAcctSubmit").on("click", function(event) {
         event.preventDefault();
         console.log("NEW ACCOUNT IS CLICKED")
         var newAccount = {
@@ -66,8 +66,8 @@ $(function() {
                 .val(),
             active: 1
         };
-        if (($("#newTerm").val())===""){
-            newAccount.term_months="0"
+        if (($("#newTerm").val()) === "") {
+            newAccount.term_months = "0"
         }
         console.log(newAccount)
         $.ajax("/api/accounts", {
@@ -78,25 +78,27 @@ $(function() {
         });
     });
 
-    $("#acctUpdate").on("click", function(event) {
+    $(".acctUpdate").on("click", function(event) {
         event.preventDefault();
         console.log("UPDATE ACCT IS CLICKED")
         var updatedAccount = {
-            account_name: $("#updateAccountName")
+            account_name: $("#updateAccountName" + this.id)
                 .val()
                 .trim(),
-            balance: $("#updateBalance")
+            balance: $("#updateBalance" + this.id)
                 .val(),
-            interest: $("#updateInterest")
+            interest: $("#updateInterest" + this.id)
                 .val(),
-            term_months: $("#updateTerm")
+            term_months: $("#updateTerm" + this.id)
                 .val(),
-            active: 1
+            active: 1,
+            id: this.id
         };
-        if (($("#newTerm").val())===""){
-            updatedAccount.term_months='0'
+        console.log(updatedAccount)
+        if (($("#updateTerm").val()) === "") {
+            updatedAccount.term_months = '0'
         }
-        console.log("Term:"+updatedAccount.term_months)
+        console.log("Term:" + updatedAccount.term_months)
         console.log(updatedAccount)
         $.ajax("/api/accounts", {
             type: "PUT",
@@ -124,6 +126,20 @@ $(function() {
     $(".modal-background, .close").on("click", function(event) {
         event.preventDefault();
         $(".modal").removeClass("is-active");
+    });
+
+
+    // show/hide charts
+    $("#showDebtChart").on("click", function(event) {
+        event.preventDefault();
+        $("#debtChart").removeClass("hide");
+        document.getElementById("feesYrChart").className += ' hide';
+    });
+
+    $("#showFeesYrChart").on("click", function(event) {
+        event.preventDefault();
+        $("#feesYrChart").removeClass("hide");
+        document.getElementById("debtChart").className += ' hide';
     });
 
 
