@@ -29,19 +29,20 @@
     <div class="column is-three-quarters">
         <div class="column is-full cardStyle">
             Total debt: $<span id="totalDebt"></span> | Yearly fees: $<span id="feesYr"></span> | Monthly fees: $<span id="feesMo"></span> | Daily fees: $<span id="feesDay"></span>
-            <div id="container" style="width:100%; height:400px;">
+            {{!-- debt chart --}}
+            <div id="debtChart" style="width:100%; height:400px;">
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                        var myChart = Highcharts.chart('container', {
+                        var myChart = Highcharts.chart('debtChart', {
                             chart: {
                                 type: 'pie'
                             },
 
                             title: {
-                                text: 'Debt'
+                                text: 'Debt Breakdown'
                             },
                             series: [{
-                            name: 'Debt',
+                            name: 'Balance',
                             colorByPoint: true,
                             
                             data: [
@@ -59,6 +60,39 @@
                     });
                 </script>
             </div>
+            {{!-- feesYr chart --}}
+            <div id="feesYrChart" class="hide" style="width:100%; height:400px;">
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var myChart = Highcharts.chart('feesYrChart', {
+                            chart: {
+                                type: 'pie'
+                            },
+
+                            title: {
+                                text: 'Yearly Interest Fees'
+                            },
+                            series: [{
+                            name: 'Interest(yr)',
+                            colorByPoint: true,
+                            
+                            data: [
+                                {{#each accounts}}
+                                {{#if active}}
+                                {
+                                    name: '{{account_name}}',
+                                    y: {{interest}} / 100 * {{balance}},
+                                },
+                                {{/if}}
+                                {{/each}}
+                            ]
+                            }]
+                        });
+                    });
+                </script>
+            </div>
+
+          Chart view: <a id="showDebtChart">Debt</a> | <a id="showFeesYrChart">Interest</a>
         </div>
     </div>
 </div>

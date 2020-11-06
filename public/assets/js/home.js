@@ -41,17 +41,17 @@ $(function() {
         var id = $(this).data("id");
         // Send the DELETE request.
         $.ajax("/api/accounts/" + id, {
-          type: "DELETE"
+            type: "DELETE"
         }).then(
-          function() {
-            console.log("deleted acct", id);
-            // Reload the page to get the updated list
-            location.reload();
-          }
+            function() {
+                console.log("deleted acct", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
         );
-      });
-//grabs inputs from newAccount modal
-      $("#newAcctSubmit").on("click", function(event) {
+    });
+    //grabs inputs from newAccount modal
+    $("#newAcctSubmit").on("click", function(event) {
         event.preventDefault();
         console.log("NEW ACCOUNT IS CLICKED")
         var newAccount = {
@@ -66,8 +66,8 @@ $(function() {
                 .val(),
             active: 1
         };
-        if (($("#newTerm").val())===""){
-            newAccount.term_months="0"
+        if (($("#newTerm").val()) === "") {
+            newAccount.term_months = "0"
         }
         console.log(newAccount)
         $.ajax("/api/accounts", {
@@ -93,10 +93,10 @@ $(function() {
                 .val(),
             active: 1
         };
-        if (($("#newTerm").val())===""){
-            updatedAccount.term_months='0'
+        if (($("#newTerm").val()) === "") {
+            updatedAccount.term_months = '0'
         }
-        console.log("Term:"+updatedAccount.term_months)
+        console.log("Term:" + updatedAccount.term_months)
         console.log(updatedAccount)
         $.ajax("/api/accounts", {
             type: "PUT",
@@ -124,6 +124,20 @@ $(function() {
     $(".modal-background, .close").on("click", function(event) {
         event.preventDefault();
         $(".modal").removeClass("is-active");
+    });
+
+
+    // show/hide charts
+    $("#showDebtChart").on("click", function(event) {
+        event.preventDefault();
+        $("#debtChart").removeClass("hide");
+        document.getElementById("feesYrChart").className += ' hide';
+    });
+
+    $("#showFeesYrChart").on("click", function(event) {
+        event.preventDefault();
+        $("#feesYrChart").removeClass("hide");
+        document.getElementById("debtChart").className += ' hide';
     });
 
 

@@ -53,6 +53,7 @@ html {
 .cardStyle {
     color: black;
     padding: 10px;
+    margin-bottom: 10px;
     background-color: white;
     border-radius: 10px;
     border-style: solid;
@@ -67,4 +68,8 @@ html {
 
 .center {
     text-align: center;
+}
+
+.hide {
+    display: none;
 }
