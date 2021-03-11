@@ -5,8 +5,9 @@ Managing your debt is lame. Credit Croc is cool. Credit Croc keeps track of your
 Managing personal finances, especially credit cards and bank loans, can be stressful. We hope to take some of that worry away by allowing you to easily visualize your financial picture and focus on what matters.
 
 ## Links
-* Deployed app on Heroku: [https://hungry-croconaw.herokuapp.com/](https://hungry-croconaw.herokuapp.com/)
-* Repository: [https://github.com/coryjquirk/croconaw-squad](https://github.com/coryjquirk/croconaw-squad)
+* [Deployed app on Heroku](https://hungry-croconaw.herokuapp.com/) (free server, takes a minute to start)
+* [Repository](https://github.com/coryjquirk/croconaw-squad)
+
 ### Demo
 <img src="https://coryjquirk.github.io/credit-croc/public/assets/img/creditcrocdemo.gif" alt="app demo">
 
